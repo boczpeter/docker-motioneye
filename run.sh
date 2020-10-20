@@ -16,4 +16,3 @@ docker run -d \
     -v $DIR/camera:/var/lib/motioneye \
     -v /etc/localtime:/etc/localtime:ro \
     ccrisan/motioneye:master-armhf
-    # djaydev/motioneye
