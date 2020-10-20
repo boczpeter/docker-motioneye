@@ -4,9 +4,9 @@
 DIR=$(realpath $(dirname $0))
 
 docker stop motioneye
-#docker container prune -f
+docker container prune -f
 docker run -d \
-    --name motioneye --rm \
+    --name motioneye \
     --hostname motioneye \
     --device=/dev/vchiq \
     -p 18765:8765 \
@@ -15,4 +15,5 @@ docker run -d \
     -v $DIR/conf:/etc/motioneye \
     -v $DIR/camera:/var/lib/motioneye \
     -v /etc/localtime:/etc/localtime:ro \
+    --restart=unless-stopped \
     ccrisan/motioneye:master-armhf
