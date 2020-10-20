@@ -2,7 +2,7 @@
     "admin": {
         "fit_frames_vertically": true, 
         "framerate_factor": 1, 
-        "layout_columns": 1, 
+        "layout_columns": 2, 
         "layout_rows": 1, 
         "resolution_factor": 1
     }
