@@ -4,9 +4,10 @@
 DIR=$(realpath $(dirname $0))
 
 docker stop motioneye
-#docker container prune -f
+docker container prune -f
 docker run -d \
-    --name motioneye --rm \
+    --name motioneye \
+    --restart=always \
     --hostname motioneye \
     --device=/dev/vchiq \
     -p 18765:8765 \
