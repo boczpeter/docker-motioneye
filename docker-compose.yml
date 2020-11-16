@@ -2,10 +2,10 @@ version: "3.5"
 services:
 
   motioneye:
-    image: ccrisan/motioneye:master-armhf # armhf/amd64
+    image: ccrisan/motioneye:master-armhf # OR armhf/amd64
     ports:
       - "18765:8765"    # web admin port mapping
-    #   - "8081:8081" # local mjpeg streaming port
+    #   - "8081:8081" # local mjpeg streaming port if you need one
     volumes:
       - "./conf:/etc/motioneye"
       - "./camera:/var/lib/motioneye"
@@ -14,10 +14,6 @@ services:
     hostname: motioneye
     devices:
       - '/dev/vchiq'    # RPI local MMAL camera
-    #   - '/dev/video0'
+    #   - '/dev/video0' # USB camera
     environment:
         TZ: "Europe/Budapest"
-# volumes:
-#   conf:
-#   camera:
-#   /etc/localtime:
