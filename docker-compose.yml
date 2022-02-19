@@ -10,10 +10,10 @@ services:
       - "./conf:/etc/motioneye"
       - "./camera:/var/lib/motioneye"
       - "/etc/localtime:/etc/localtime:ro"
-    restart: always
+    restart: unless-stopped
     hostname: motioneye
     devices:
-      - '/dev/vchiq'    # RPI local MMAL camera
-    #   - '/dev/video0' # USB camera
+      # - '/dev/vchiq'    # RPI local MMAL camera
+      - '/dev/video0' # USB camera
     environment:
         TZ: "Europe/Budapest"
